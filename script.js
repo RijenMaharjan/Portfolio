@@ -8,7 +8,7 @@
         const EMAIL = "rijenmaharjan94@gmail.com";
         const CV_FILE = "resume-rijen-maharjan.pdf";
         const GITHUB = "https://github.com/RijenMaharjan";
-        const LINKEDIN = "https://linkedin.com/in/rijen-maharjan";
+        const LINKEDIN = "https://www.linkedin.com/in/rijen-maharjan-936899275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app";
         const SKILLS = ["TypeScript", "Node.js", "Next.js", "Express.js", "MYSQL", "PostgreSQL", "Figma", "Docker", "Playwright", "Laravel", "PHP"];
         
         const PROJECTS = [
@@ -52,16 +52,15 @@
                 points: ["Built the website for a restaurant", "Research on POS systems", "Developed custom POS system"] 
             },
             { 
-                role: "Backend Developer", 
+                role: "Jr Backend Developer", 
                 company: "Geek Tech Solutions", 
-                dates: "Jun 2025 – Sept 2025", 
-                points: ["Built the website for a restaurant", "Research on POS systems", "Developed custom POS system"] 
+                dates: "Sept 2025 – Jan 2026", 
+                points: ["Research on POS systems", "Developed custom POS system", "Maintained and optimized existing backend services", "Collaborated with frontend developers to integrate APIs and ensure seamless user experience", "Implemented security best practices to safeguard user data and prevent vulnerabilities", "Participated in code reviews and contributed to improving development processes"] 
             }
         ];
 
         const EDUCATION = [
-            { degree: "MSc Advanced Computing", school: "Imperial College London", dates: "2018 – 2020" },
-            { degree: "BSc Computer Science", school: "Technical University Berlin", dates: "2014 – 2018" }
+            { degree: "Bachelor in Information Management", school: "National College of Computer Studies", dates: "2020 – 2025" }
         ];
 
         // ================================================================
