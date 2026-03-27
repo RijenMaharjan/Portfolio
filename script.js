@@ -12,6 +12,7 @@ I have experience creating projects like restaurant management systems, automati
 I’m passionate about exploring new technologies, optimizing workflows, and building tools that solve real-world problems. My portfolio showcases my journey as a developer and delivering applications that work seamlessly behind the scenes.
 
 I’m always eager to take on challenging projects, learn continuously, and contribute to solutions that matter.`;
+
 const EMAIL = "rijenmhrzn94@gmail.com";
 const CV_FILE = "resume-rijen-maharjan.pdf";
 const GITHUB = "https://github.com/RijenMaharjan";
@@ -28,20 +29,20 @@ const PROJECTS = [
         githubUrl: "https://github.com/RijenMaharjan/Personal-Productivity-App"
     },
     {
-        title: "Monolith UI",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "Hotel Booking System",
+        description: "A web application for managing hotel bookings, featuring user authentication, room management, and booking functionality.",
         image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop",
-        tags: ["React", "Tailwind"],
+        tags: ["PHP", "Laravel", "MySQL", "JavaScript"],
         liveUrl: "#",
-        githubUrl: "#"
+        githubUrl: "https://github.com/RijenMaharjan/hotelbooking"
     },
     {
-        title: "Signal Stream",
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "Web Scraping",
+        description: "Web scrapper for ekantipur website to extract news articles and store them in a database for analysis and retrieval.",
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
-        tags: ["Rust", "WebRTC"],
+        tags: ["Python"],
         liveUrl: "#",
-        githubUrl: "#"
+        githubUrl: "https://github.com/RijenMaharjan/Web-Scrapping"
     }
 ];
 
