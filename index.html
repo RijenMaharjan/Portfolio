@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Rijen Maharjan - Backend Developer</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=IBM+Plex+Mono:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#c7ecc7",
+                        "background": "#131313",
+                        "outline-variant": "#424841",
+                        "tertiary-fixed": "#ffd9e0",
+                        "secondary": "#ccc6b3",
+                        "on-secondary": "#333123",
+                        "on-primary-container": "#244329",
+                        "tertiary": "#f2b7c4",
+                        "tertiary-container": "#d098a5",
+                        "on-tertiary-container": "#59303b",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed-variant": "#2e4e32",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#bab5a3",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed": "#02210a",
+                        "surface-bright": "#3a3939",
+                        "outline": "#8c928a",
+                        "on-secondary-fixed": "#1e1c10",
+                        "on-surface": "#e5e2e1",
+                        "on-background": "#e5e2e1",
+                        "inverse-primary": "#466649",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed": "#e8e2cf",
+                        "primary-container": "#8db08e",
+                        "on-primary": "#18371e",
+                        "surface-variant": "#353534",
+                        "on-tertiary-fixed": "#32101b",
+                        "secondary-fixed-dim": "#ccc6b3",
+                        "surface-container": "#201f1f",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-on-surface": "#313030",
+                        "surface": "#131313",
+                        "surface-dim": "#131313",
+                        "on-tertiary": "#4b242f",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#4a4738",
+                        "primary": "#acd0ac",
+                        "surface-tint": "#acd0ac",
+                        "secondary-container": "#4a4738",
+                        "on-tertiary-fixed-variant": "#653a45",
+                        "tertiary-fixed-dim": "#f2b7c4",
+                        "primary-fixed-dim": "#acd0ac",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#c2c8bf"
+                    },
+                    fontFamily: {
+                        "serif": ["DM Serif Display", "serif"],
+                        "mono": ["IBM Plex Mono", "monospace"],
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body
+    class="bg-background text-on-surface font-mono selection:bg-primary-container selection:text-on-primary grain overflow-x-hidden"
+    data-mode="connect">
+    <!-- Top Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl">
+        <nav class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+            <a class="font-serif text-xl italic text-[#acd0ac] tracking-tighter uppercase" href="#home">ARCHIVIST // VOL
+                01</a>
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="nav-link text-sm uppercase tracking-widest text-[#8c928a] hover:text-[#acd0ac] transition-colors duration-300 nav-underline"
+                    data-section="home" href="#home">Home</a>
+                <a class="nav-link text-sm uppercase tracking-widest text-[#8c928a] hover:text-[#acd0ac] transition-colors duration-300 nav-underline nav-active"
+                    data-section="about" href="#about">About</a>
+                <a class="nav-link text-sm uppercase tracking-widest text-[#8c928a] hover:text-[#acd0ac] transition-colors duration-300 nav-underline"
+                    data-section="projects" href="#projects">Projects</a>
+                <a class="nav-link text-sm uppercase tracking-widest text-[#8c928a] hover:text-[#acd0ac] transition-colors duration-300 nav-underline"
+                    data-section="resume" href="#resume">Resume</a>
+                <a class="nav-link text-sm uppercase tracking-widest text-[#8c928a] hover:text-[#acd0ac] transition-colors duration-300 nav-underline"
+                    data-section="contact" href="#contact">Contact</a>
+            </div>
+            <!-- Mobile Toggle -->
+            <button class="md:hidden text-[#8db08e]" id="mobile-menu-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div class="hidden md:hidden absolute top-full left-0 w-full bg-surface-container-high border-t border-outline-variant/20 py-8 flex flex-col items-center gap-6"
+            id="mobile-menu">
+            <a class="mobile-nav-link uppercase tracking-[0.2em] text-sm" href="#home">Home</a>
+            <a class="mobile-nav-link uppercase tracking-[0.2em] text-sm" href="#about">About</a>
+            <a class="mobile-nav-link uppercase tracking-[0.2em] text-sm" href="#projects">Projects</a>
+            <a class="mobile-nav-link uppercase tracking-[0.2em] text-sm" href="#resume">Resume</a>
+            <a class="mobile-nav-link uppercase tracking-[0.2em] text-sm" href="#contact">Contact</a>
+        </div>
+    </header>
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center px-8 relative reveal active" id="home">
+            <div class="max-w-4xl w-full flex flex-col items-center text-center">
+                <!-- Profile Image -->
+                <div class="relative mb-12 group">
+                    <div
+                        class="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-transparent animate-spin-slow opacity-30 group-hover:opacity-100 transition-opacity duration-700 blur-xl">
+                    </div>
+                    <div class="relative w-48 h-48 md:w-64 md:h-64 border border-outline-variant/30 overflow-hidden">
+                        <img alt="Profile"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            data-alt="dramatic high-contrast portrait of a professional creative in a dark studio, cinematic low-key lighting with subtle sage green rim light"
+                            id="profile-pic"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmRNR7HZMuHjzriFIeGaKPi4HL_Yv27Il-CHpvkotTYBVYZswcdCuAfhdS-NuQF52v0JWGBdrSwjrtdUHCzEPeBWOEGCo4v0C5J-WVzTegRZ2ngwsXT7VXBe0NVe5-LPIBcDD7nhWLmIQHq32YV1RTeRfrtmrI1weiNEVgoM71Xx3Xa02mXbHtp978N-tweZumVRz2555yhRJLfDPfGO05LPsBs58A7rVEY2Cw543Lz9CyKsHZ0k35uurLKRKD9lZCoiwmtWATvYsP">
+                    </div>
+                </div>
+                    <p class="font-mono text-primary text-sm tracking-[0.3em] uppercase mb-4" id="hero-tagline-label">BACKEND DEVELOPER</p>
+                    <h1 class="font-serif text-6xl md:text-8xl text-on-surface tracking-tighter mb-8" id="hero-name-label">RIJEN MAHARJAN</h1>
+                <p class="font-mono text-outline 
+                max-w-xl text-sm leading-relaxed mb-12 uppercase tracking-wide"
+                    id="hero-bio-label">Building high-fidelity digital interfaces and technical ecosystems with a focus
+                    on editorial aesthetics and functional precision.</p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a class="px-10 py-4 bg-primary-container text-on-primary text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors duration-300"
+                        href="#projects">
+                        View My Work
+                    </a>
+                    <a class="px-10 py-4 border border-outline text-on-surface text-xs uppercase tracking-widest font-bold hover:bg-surface-bright transition-colors duration-300"
+                        href="resume-alexei-vance.pdf" id="download-cv-btn" download="resume-alexei-vance.pdf">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="py-32 px-8 reveal active" id="about">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
+                <div class="md:col-span-5">
+                    <span class="font-mono text-xs text-outline uppercase tracking-[0.4em] block mb-8">Section 02 //
+                        Profile</span>
+                    <h2 class="font-serif text-5xl md:text-7xl mb-8">Technical Identity.</h2>
+                </div>
+                <div class="md:col-span-7 flex flex-col justify-end">
+                    <p class="text-outline text-lg leading-relaxed mb-12" id="about-bio-label">Based at the intersection
+                        of logic and aesthetics, I approach software engineering as a craft. With over 6 years of
+                        experience across the full stack, I specialize in creating performant, accessible, and visually
+                        striking web architectures. My philosophy is rooted in the belief that digital tools should feel
+                        as deliberate and tactile as physical objects.</p>
+                    <div class="flex flex-wrap gap-3" id="skills-container">
+                        <!-- Skills injected via JS
+                        <span
+                            class="px-4 py-2 border border-primary-container text-primary-container text-[10px] uppercase tracking-widest font-mono">TypeScript</span>
+                            <span
+                            class="px-4 py-2 border border-primary-container text-primary-container text-[10px] uppercase tracking-widest font-mono">Next.js</span> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section class="py-32 px-8 bg-surface-container-low reveal active" id="projects">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                    <div>
+                        <span class="font-mono text-xs text-outline uppercase tracking-[0.4em] block mb-4">Section 03 //
+                            Portfolio</span>
+                        <h2 class="font-serif text-5xl md:text-7xl">Curated Work.</h2>
+                    </div>
+                    <p class="font-mono text-xs text-outline tracking-widest uppercase">Select archives 2022 — 2024</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" id="projects-grid">
+                    <!-- Projects injected via JS -->
+                </div>
+            </div>
+        </section>
+        <!-- Resume Section -->
+        <section class="py-32 px-8 reveal active" id="resume">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-20">
+                    <span class="font-mono text-xs text-outline uppercase tracking-[0.4em] block mb-4">Section 04 //
+                        History</span>
+                    <h2 class="font-serif text-5xl md:text-7xl">The Log.</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <!-- Experience -->
+                    <div>
+                        <h3
+                            class="font-mono text-primary text-xs tracking-[0.3em] uppercase mb-12 border-b border-outline-variant/30 pb-4">
+                            Experience</h3>
+                        <div class="relative border-l border-primary-container/30 ml-2 flex flex-col gap-12"
+                            id="experience-container">
+                            <!-- Experience items injected via JS -->
+                        </div>
+                    </div>
+                    <!-- Education -->
+                    <div>
+                        <h3
+                            class="font-mono text-primary text-xs tracking-[0.3em] uppercase mb-12 border-b border-outline-variant/30 pb-4">
+                            Education</h3>
+                        <div class="relative border-l border-primary-container/30 ml-2 flex flex-col gap-12"
+                            id="education-container">
+                            <!-- Education items injected via JS -->
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-24 flex justify-center">
+                    <a class="px-16 py-6 bg-primary-container text-on-primary text-sm uppercase tracking-[0.3em] font-bold hover:bg-primary transition-all duration-300"
+                        href="resume-alexei-vance.pdf" id="resume-download-cta" download="resume-alexei-vance.pdf">
+                        Obtain Full Dossier (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="py-32 px-8 bg-surface-container-lowest reveal active" id="contact">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="font-mono text-xs text-outline uppercase tracking-[0.4em] block mb-4">Section 05 //
+                        Connection</span>
+                    <h2 class="font-serif text-5xl md:text-7xl mb-8">Initiate Contact.</h2>
+                    <p class="font-mono text-outline text-sm uppercase tracking-widest">Available for select
+                        collaborations.</p>
+                </div>
+                <form class="space-y-12" id="contact-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div class="relative group">
+                            <input
+                                class="w-full bg-transparent border-0 border-b border-outline py-4 px-0 focus:ring-0 focus:border-primary placeholder:text-outline-variant transition-colors text-sm uppercase tracking-widest"
+                                id="name" placeholder="YOUR NAME" required="" type="text">
+                        </div>
+                        <div class="relative group">
+                            <input
+                                class="w-full bg-transparent border-0 border-b border-outline py-4 px-0 focus:ring-0 focus:border-primary placeholder:text-outline-variant transition-colors text-sm uppercase tracking-widest"
+                                id="email" placeholder="YOUR EMAIL" required="" type="email">
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <textarea
+                            class="w-full bg-transparent border-0 border-b border-outline py-4 px-0 focus:ring-0 focus:border-primary placeholder:text-outline-variant transition-colors text-sm uppercase tracking-widest resize-none"
+                            id="message" placeholder="YOUR MESSAGE" required="" rows="4"></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button
+                            class="group flex items-center gap-4 text-primary font-mono text-sm uppercase tracking-[0.3em] hover:opacity-70 transition-opacity"
+                            type="submit">
+                            Transmit Message
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-32 flex flex-col items-center gap-12">
+                    <a class="font-serif text-3xl md:text-5xl text-[#8db08e] hover:opacity-50 transition-opacity italic underline decoration-1 underline-offset-8"
+                        href="mailto:hello@alexei-vance.io" id="footer-email-link">hello@alexei-vance.io</a>
+                    <div class="flex gap-12" id="socials-container">
+                        <!-- Socials injected via JS -->
+                        <a href="https://github.com/RijenMaharjan" target="_blank"
+                            class="text-xs font-mono tracking-[0.3em] uppercase text-outline hover:text-primary transition-colors">GITHUB</a><a
+                            href="https://linkedin.com/in/rijen-maharjan" target="_blank"
+                            class="text-xs font-mono tracking-[0.3em] uppercase text-outline hover:text-primary transition-colors">LINKEDIN</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#0f0f0f] border-t border-[#8c928a]/15">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 py-20 w-full max-w-7xl mx-auto gap-8">
+            <span class="font-mono uppercase text-[10px] tracking-[0.2em] text-[#8c928a]" id="copyright-label">© 2026
+                ALEXEI VANCE // ALL RIGHTS RESERVED.</span>
+            <div class="flex gap-8 text-[#8db08e] text-[10px] uppercase tracking-[0.2em]" id="footer-links">
+                <!-- Footer links matching social names -->
+                <a href="https://github.com/RijenMaharjan" target="_blank"
+                    class="hover:text-on-surface transition-colors">GITHUB</a><a
+                    href="https://linkedin.com/in/rijen-maharjan" target="_blank"
+                    class="hover:text-on-surface transition-colors">LINKEDIN</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
